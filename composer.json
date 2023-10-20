@@ -2,6 +2,8 @@
     "name": "fredinho777/migrations",
     "description": "Create migrations and MVC files from table's fields",
     "type": "library",
+    "license": "Halltec",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "fredinho777"
