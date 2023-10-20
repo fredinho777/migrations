@@ -3,7 +3,7 @@
     "description": "Create migrations and MVC files from table's fields",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "fredinho777"
