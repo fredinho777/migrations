@@ -1,0 +1,11 @@
+{
+    "name": "fredinho777/migrations",
+    "description": "Create migrations and MVC files from table's fields",
+    "type": "library",
+    "authors": [
+        {
+            "name": "fredinho777"
+        }
+    ],
+    "require": {}
+}
