@@ -1,6 +1,6 @@
 {
     "name": "halltec/migrations",
-    "description": "Create migrations and MVC files from defined fields",
+    "description": "Create migrations and MVC files",
     "type": "library",
     "license": "MIT",
     "authors": [
