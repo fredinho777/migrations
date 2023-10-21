@@ -33,8 +33,8 @@ $'.lcfirst($className).' = new '.$className.'((int)$_GET["id"]);
         </form>
     </div>';
 
-    if (!file_exists("../../views/editar-".lcfirst($className).".php")) {
-        $classFile = fopen("../../views/editar-".lcfirst($className).".php", "w") or die("Error");
+    if (!file_exists(BASE_PATH."/views/editar-".lcfirst($className).".php")) {
+        $classFile = fopen(BASE_PATH."/views/editar-".lcfirst($className).".php", "w") or die("Error");
 
         $text = <<<_END
         $content

@@ -104,8 +104,8 @@ if(!empty($'.lcfirst($className).')) {
     HTML::renderUserMessage("No se han encontrado registros en la base de datos", "info");
 }';
 
-    if (!file_exists("../../views/".lcfirst($className).".php")) {
-        $classFile = fopen("../../views/".lcfirst($className).".php", "w") or die("Error");
+    if (!file_exists(BASE_PATH."/views/".lcfirst($className).".php")) {
+        $classFile = fopen(BASE_PATH."/views/".lcfirst($className).".php", "w") or die("Error");
 
         $text = <<<_END
         $content

@@ -83,8 +83,8 @@ if(!empty($_GET["action"])) {
     exit;
 }';
 
-    if (!file_exists("../../controllers/controller-".$className.".php")) {
-        $classFile = fopen("../../controllers/controller-".$className.".php", "w") or die("Error");
+    if (!file_exists(BASE_PATH."/controllers/controller-".$className.".php")) {
+        $classFile = fopen(BASE_PATH."/controllers/controller-".$className.".php", "w") or die("Error");
 
         $text = <<<_END
         $content

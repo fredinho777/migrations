@@ -28,8 +28,8 @@ function createAdd($className, $params)
         </form>
     </div>';
 
-    if (!file_exists("../../views/nuevo-".lcfirst($className).".php")) {
-        $classFile = fopen("../../views/nuevo-".lcfirst($className).".php", "w") or die("Error");
+    if (!file_exists(BASE_PATH."/views/nuevo-".lcfirst($className).".php")) {
+        $classFile = fopen(BASE_PATH."/views/nuevo-".lcfirst($className).".php", "w") or die("Error");
 
         $text = <<<_END
         $content

@@ -137,8 +137,8 @@ $content .='public function __construct($id = null, $tablename = "'.$tableName.'
         }
     }';
 
-    if (!file_exists("../../models/class-".$className.".php")) {
-        $classFile = fopen("../../models/class-".$className.".php", "w") or die("Error");
+    if (!file_exists(BASE_PATH."/models/class-".$className.".php")) {
+        $classFile = fopen(BASE_PATH."/models/class-".$className.".php", "w") or die("Error");
 
         $text = <<<_END
         $content

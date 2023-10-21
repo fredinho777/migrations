@@ -1,6 +1,6 @@
 <?php 
-include_once("../../config.php");
-include_once("../../models/class-Migration.php");
+include_once(BASE_PATH."/config.php");
+include_once("class-Migration.php");
 include_once("makeMVC/createModel.php");
 include_once("makeMVC/createController.php");
 include_once("makeMVC/createView.php");

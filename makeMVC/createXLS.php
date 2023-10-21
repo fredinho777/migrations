@@ -101,8 +101,8 @@ function createXLS($className, $params)
     ?>
     ';
 
-    if (!file_exists("../../views/".lcfirst($className)."-XLS.php")) {
-        $classFile = fopen("../../views/".lcfirst($className)."-XLS.php", "w") or die("Error");
+    if (!file_exists(BASE_PATH."/views/".lcfirst($className)."-XLS.php")) {
+        $classFile = fopen(BASE_PATH."/views/".lcfirst($className)."-XLS.php", "w") or die("Error");
 
         $text = <<<_END
         $content
