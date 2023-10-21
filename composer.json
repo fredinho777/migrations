@@ -1,6 +1,6 @@
 {
-    "name": "fredinho777/migrations",
-    "description": "Create migrations and MVC files from table's fields",
+    "name": "halltec/migrations",
+    "description": "Create migrations and MVC files from defined fields",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -8,6 +8,5 @@
             "name": "fredinho777"
         }
     ],
-    "minimum-stability": "dev",
     "require": {}
 }
