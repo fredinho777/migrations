@@ -11,8 +11,8 @@ $'.lcfirst($className).' = new '.$className.'((int)$_GET["id"]);
         <input type="hidden" value="<?php echo $'.lcfirst($className).'->id; ?>" name="id"/>
             <fieldset>  
                 <div class="row">';
-            $content .= PHP_EOL."\t\t\t\t\t";
-                    foreach ($params as $value) {
+                foreach ($params as $value) {
+                    $content .= PHP_EOL."\t\t\t\t\t";
         $content .= '<div class="col col-md-4">
                         <label class="control-label" for="'.$value[0].'">'.ucfirst($value[0]).'</label>
                         <div class="controls">
