@@ -46,14 +46,14 @@ function createXLS($className, $params)
         $j=65;
         foreach ($params as $key=> $item) {            
             $content .= '->setCellValue("'.chr($j).'1", "'.$item[0].'")';
-            if ($key == count($params)-1) {
-                $content .= ';';
-                $content .= PHP_EOL."\t\t";
-            }else{
-                $content .= PHP_EOL."\t\t\t\t\t\t\t";
-            }
+            $content .= PHP_EOL."\t\t\t\t\t\t\t";
             $j++;   
         }
+
+        $content .= '->setCellValue("'.chr($j++).'1", "datecreated")';
+        $content .= PHP_EOL."\t\t\t\t\t\t\t";
+        $content .= '->setCellValue("'.chr($j++).'1", "dateupdated");';
+        $content .= PHP_EOL."\t\t";
     
         $content .= '$i = 1;
         foreach($'.lcfirst($className).' as $item) {   
@@ -64,14 +64,15 @@ function createXLS($className, $params)
         $j=65;
         foreach ($params as $key=> $item) {            
             $content .= '->setCellValue("'.chr($j).'". ($i+1), $item["'.$item[0].'"])';
-            if ($key == count($params)-1) {
-                $content .= ';';
-                $content .= PHP_EOL."\t\t";
-            }else{
-                $content .= PHP_EOL."\t\t\t\t\t\t\t";
-            }
+            $content .= PHP_EOL."\t\t\t\t\t\t\t";
             $j++;   
         }
+
+        $content .= '->setCellValue("'.chr($j++).'". ($i+1), $item["datecreated"])';
+        $content .= PHP_EOL."\t\t\t\t\t\t\t";
+        $content .= '->setCellValue("'.chr($j++).'". ($i+1), $item["dateupdated"]);';
+        $content .= PHP_EOL."\t\t";
+
         $content .= '$i++;      
         }//-- end foreach
     
