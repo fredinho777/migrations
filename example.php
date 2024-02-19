@@ -8,11 +8,11 @@ include_once("makeMVC/createAdd.php");
 include_once("makeMVC/createUpdate.php");
 include_once("makeMVC/createXLS.php");
 
-Class ExampleMigrate extends Migration{
+Class Example extends Migration{
     public function runTable(){
         $createXLS = true;
 
-        $className = substr(get_class($this), 0, -7);
+        $className = get_class($this);
         
         $this->tablename = strtolower(preg_replace('/(?<=\w)(\p{Lu})/u', '_$1', $className));
         

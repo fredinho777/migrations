@@ -2,7 +2,7 @@
 include_once("example.php");
 
 if (RUNMIGRATE) {
-    (new ExampleMigrate())->runTable();
+    (new Example())->runTable();
 }else{
     echo "Access Denied !!!";
 }
