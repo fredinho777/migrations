@@ -15,11 +15,11 @@ $set = isset($_GET["set"]) ? $_GET["set"] : 1;
 $limit = 100;
 ?>
 <h1>
-    <span class="hidden-sm hidden-xs">'.$className.'</span>
+    <span class="hidden-sm hidden-xs">'.preg_replace('/(?<=\w)(\p{Lu})/u', ' $1', $className).'</span>
     <span class="admin-buttons">';
         $content .= PHP_EOL."\t\t";
         if ($createXLS) { 
-            $content .= '<a href="views/'.lcfirst($className).'-xls.php?search=<?php echo $search ?>&from=<?php echo $from ?>&to=<?php echo $to ?>" class="btn btn-sm btn-warning" role="button">';
+            $content .= '<a href="views/'.lcfirst($className).'-XLS.php?search=<?php echo $search ?>&from=<?php echo $from ?>&to=<?php echo $to ?>" class="btn btn-sm btn-warning" role="button">';
             $content .= PHP_EOL."\t\t\t";    
             $content .= 'Exportar Xls';
             $content .= PHP_EOL."\t\t";
@@ -72,7 +72,7 @@ if(!empty($'.lcfirst($className).')) {
                 $content .= PHP_EOL."\t\t\t\t";
 
                 foreach ($params as $value) {
-                    $content .= '<th>'.$value[0].'</th>';
+                    $content .= '<th>'.str_replace("_", " ", ucfirst($value[0])).'</th>';
                     $content .= PHP_EOL."\t\t\t\t";
                 }
                 

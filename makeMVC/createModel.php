@@ -10,6 +10,7 @@ $content = '<?php
 
     $content .= PHP_EOL;
     $content .= PHP_EOL."\t\t";
+    $content .= 'public $id';
 
     foreach ($params as $value) {
         $content .= 'public $'.$value[0].';';
@@ -20,7 +21,7 @@ $content = '<?php
         
 $content .='public function __construct($id = null, $tablename = "'.$tableName.'", $itemtype = ITEM_TYPE_'.strtoupper($className).') {
             $this->requiresfolder = false;
-            $this->debugg = false;
+            $this->debbug = false;
             parent::__construct($id, $tablename, $itemtype);
         }
 

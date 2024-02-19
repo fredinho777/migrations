@@ -5,7 +5,7 @@ $content = '<?php
 include_once("models/class-'.$className.'.php");
 $'.lcfirst($className).' = new '.$className.'((int)$_GET["id"]);
 ?>
-    <h1 class="page-header">Editar '.$className.'</h1>
+    <h1 class="page-header">Editar '.preg_replace('/(?<=\w)(\p{Lu})/u', ' $1', $className).'</h1>
     <div class="col col-md-12">
         <form class="form-horizontal" action="controllers/controller-'.$className.'.php?action=update" method="post">
         <input type="hidden" value="<?php echo $'.lcfirst($className).'->id; ?>" name="id"/>
@@ -14,9 +14,9 @@ $'.lcfirst($className).' = new '.$className.'((int)$_GET["id"]);
                 foreach ($params as $value) {
                     $content .= PHP_EOL."\t\t\t\t\t";
         $content .= '<div class="col col-md-4">
-                        <label class="control-label" for="'.$value[0].'">'.ucfirst($value[0]).'</label>
+                        <label class="control-label" for="'.$value[0].'">'.str_replace("_", " ", ucfirst($value[0])).'</label>
                         <div class="controls">
-                            <input class="form-control" type="text" name="'.$value[0].'" placeholder="'.ucfirst($value[0]).'" value="<?php echo $'.lcfirst($className).'->'.$value[0].'; ?>"/>        
+                            <input class="form-control" type="text" name="'.$value[0].'" placeholder="'.str_replace("_", " ", ucfirst($value[0])).'" value="<?php echo $'.lcfirst($className).'->'.$value[0].'; ?>"/>        
                         </div>
                     </div>';
                     }    
