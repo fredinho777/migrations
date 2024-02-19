@@ -10,7 +10,8 @@ $content = '<?php
 
     $content .= PHP_EOL;
     $content .= PHP_EOL."\t\t";
-    $content .= 'public $id';
+    $content .= 'public $id;';
+    $content .= PHP_EOL."\t\t";
 
     foreach ($params as $value) {
         $content .= 'public $'.$value[0].';';
