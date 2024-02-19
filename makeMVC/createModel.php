@@ -17,7 +17,9 @@ $content = '<?php
         $content .= 'public $'.$value[0].';';
         $content .= PHP_EOL."\t\t";
     }
-
+    $content .= 'public $datecreated;';
+    $content .= PHP_EOL."\t\t";
+    $content .= 'public $dateupdated;';
     $content .= PHP_EOL."\t\t";
         
 $content .='public function __construct($id = null, $tablename = "'.$tableName.'", $itemtype = ITEM_TYPE_'.strtoupper($className).') {
@@ -32,17 +34,25 @@ $content .='public function __construct($id = null, $tablename = "'.$tableName.'
                 $query = "INSERT INTO ".$this->tablename." VALUES (
                     null,'.PHP_EOL."\t\t\t\t\t";
                     foreach ($params as $key => $value) {
-                        $content .= ($key !=count($params) - 1) ? ':'.$value[0].',' : ':'.$value[0];
+                        $content .= ':'.$value[0].',';
                         $content .= PHP_EOL."\t\t\t\t\t";
-                    }                        
+                    }    
+                    $content .= ":datecreated,";  
+                    $content .= PHP_EOL."\t\t\t\t\t";        
+                    $content .= ":dateupdated";  
+                    $content .= PHP_EOL."\t\t\t\t\t";        
    $content .= ')";
             }
             if(empty($queryParams)) {
                 $queryParams = ['.PHP_EOL."\t\t\t\t\t";  
                     foreach ($params as $key => $value) {
-                        $content .= ($key !=count($params) - 1) ? '":'.$value[0].'"=>$this->'.$value[0].',' : '":'.$value[0].'"=>$this->'.$value[0];
+                        $content .= '":'.$value[0].'"=>$this->'.$value[0].',';
                         $content .= PHP_EOL."\t\t\t\t\t";
                     }  
+                    $content .= '":datecreated"=>$this->datecreated,';  
+                    $content .= PHP_EOL."\t\t\t\t\t";
+                    $content .= '":dateupdated"=>$this->dateupdated';  
+                    $content .= PHP_EOL."\t\t\t\t\t";
    $content .= '];
             }
   
@@ -54,18 +64,22 @@ $content .='public function __construct($id = null, $tablename = "'.$tableName.'
             if(empty($query)) {
                 $query = "UPDATE ".$this->tablename." SET'.PHP_EOL."\t\t\t\t\t";
                     foreach ($params as $key => $value) {
-                        $content .= ($key !=count($params) - 1) ? $value[0].' = :'.$value[0].',' : $value[0].' = :'.$value[0];
+                        $content .= $value[0].' = :'.$value[0].',';
                         $content .= PHP_EOL."\t\t\t\t\t";
                     } 
+                    $content .= ':dateupdated = :dateupdated';  
+                    $content .= PHP_EOL."\t\t\t\t\t";
    $content .= 'WHERE id = ".$this->id;
             }
             if(empty($queryParams)) {
                 $queryParams = ['.PHP_EOL."\t\t\t\t\t";
                     foreach ($params as $key => $value) {
-                        $content .= ($key !=count($params) - 1) ? '":'.$value[0].'"=>$this->'.$value[0].',' : '":'.$value[0].'"=>$this->'.$value[0];
+                        $content .= '":'.$value[0].'"=>$this->'.$value[0].',';
                         $content .= PHP_EOL."\t\t\t\t\t";
                     }
-                    $content .= '];
+                    $content .= '":dateupdated"=>$this->dateupdated';  
+                    $content .= PHP_EOL."\t\t\t\t\t";
+   $content .= '];
             }
             
             return parent::update($query, $queryParams);

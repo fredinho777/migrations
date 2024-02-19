@@ -21,6 +21,9 @@ if(!empty($_GET["action"])) {
                     $content .= PHP_EOL."\t\t\t\t";
                 }
 
+                $content .= '$item->datecreated = date("Y-m-d H:i:s");';
+                $content .= PHP_EOL."\t\t\t\t";
+                $content .= '$item->dateupdated = date("Y-m-d H:i:s");';
                 $content .= PHP_EOL."\t\t\t\t";
                
                 $content .='$id = $item->add();              
@@ -64,6 +67,7 @@ if(!empty($_GET["action"])) {
                     $content .= PHP_EOL."\t\t\t\t";
                 }
 
+                $content .= '$item->dateupdated = date("Y-m-d H:i:s");';
                 $content .= PHP_EOL."\t\t\t\t";                   
 
                 $content .='if($item->update() === true) {
