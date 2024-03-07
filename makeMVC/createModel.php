@@ -93,7 +93,7 @@ $content .='public function __construct($id = null, $tablename = "'.$tableName.'
             /*
              * -- BASE QUERY
              */
-            $query = "SELECT * FROM ".$this->tablename;      
+            $query = "SELECT SQL_CALC_FOUND_ROWS * FROM ".$this->tablename;      
             
             //SEARCH ALGORITHM
             if(!empty($params["search"])) {
