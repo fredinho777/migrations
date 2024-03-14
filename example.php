@@ -1,5 +1,6 @@
 <?php 
-include_once("../../../config.php");
+$baseRoute = file_exists('../../../gestion') ? '../../../gestion/' : '../../../';
+include_once($baseRoute."config.php");
 include_once("class-Migration.php");
 include_once("makeMVC/createModel.php");
 include_once("makeMVC/createController.php");
