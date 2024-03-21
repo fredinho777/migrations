@@ -67,7 +67,7 @@ $content .='public function __construct($id = null, $tablename = "'.$tableName.'
                         $content .= $value[0].' = :'.$value[0].',';
                         $content .= PHP_EOL."\t\t\t\t\t";
                     } 
-                    $content .= ':dateupdated = :dateupdated';  
+                    $content .= 'dateupdated = :dateupdated';  
                     $content .= PHP_EOL."\t\t\t\t\t";
    $content .= 'WHERE id = ".$this->id;
             }
